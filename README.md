@@ -59,6 +59,10 @@ var myCities = [
 $('select').timezone(myCities);
 ```
 
+You can see the [demo][] now.
+
+[demo]: http://projects.jga.me/timezone-select/ "View the demo now!"
+
 ##Development
 
 ###Requirements
