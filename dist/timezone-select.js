@@ -1,3 +1,10 @@
+/*!
+ * timezone-select - A jQuery plugin to turn a select box into a timezone selector
+ * v0.1.0
+ * https://github.com/jgallen23/timezone-select
+ * copyright Greg Allen 2013
+ * MIT License
+*/
 //timezone-select.js
 (function($){
   var cities = [
