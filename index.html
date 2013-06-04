@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie9 ie8 ie7 ie6" lang="en"><![endif]-->
+<!--[if IE 7]><html class="ie9 ie8 ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie9 ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
+<head>
+	<title>Demo - jQuery.Timezone</title>	
+	<script src="bootstrap.js"></script>
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="page">
+		
+			<nav class="nav">
+				<ul>
+					<li><a href="https://github.com/jgallen23/timezone-select">Documentation</a></li>
+					<li class="download"><a href="https://github.com/jgallen23/timezone-select/archive/master.zip">Download <span class="version">v1.0</span></a></li>
+				</ul>
+			</nav>
+		
+			<header class="header">
+				<h1>jQuery.timezone <span class="version">v0.1.0</span></h1>
+				<p>timezone is a tiny jQuery Plugin that fill a select element with current timezones and try to guess your timezone preselecting it. It has it own tests and can be installed with Bower.<p>
+				<div class="custom-nav"></div>
+			</header>
+			
+			<div class="sep"><span class="left-arrow arrow"></span><span class="right-arrow arrow"></span></div>
+			
+			<div class="demo" id="demo-one">
+				<div class="description clock">
+					<h2>Initializing</h2>
+					<p>Initializing timezone is really simple as you only need to call the plugin in order to fill it with some default timezones. Quite convinient, huh?</p>
+				</div>
+
+				<nav class="subnav tabs">
+					<ul>
+						<li class="active"><a href="#panel-1">Demo</a></li>
+						<li><a href="#panel-2">JavaScript</a></li>
+						<li><a href="#panel-3">HTML</a></li>
+					</ul>
+				</nav>
+				<div class="panels">
+					<div class="panel" id="panel-1">
+						<pre><select id="demo"></select></pre>
+					</div>				
+
+					<div class="panel" id="panel-2">
+						<pre>$('#demo').timezone();</pre>
+					</div>
+
+					<div class="panel" id="panel-3">
+						<pre>&lt;select id=&quot;demo&quot;&gt;&lt;/select&gt;</pre>
+					</div>					
+				</div>
+			</div>
+			<div class="demo" id="demo-two">
+				<div class="description">
+					<h2>Overwriting</h2>
+					<p>If you don't like our cities you can make your owns!</p>
+				</div>
+
+				<nav class="subnav tabs">
+					<ul>
+						<li class="active"><a href="#panel-4">Demo</a></li>
+						<li><a href="#panel-5">JavaScript</a></li>
+						<li><a href="#panel-6">HTML</a></li>
+					</ul>
+				</nav>
+				<div class="panels">
+					<div class="panel" id="panel-4">
+						<pre><select id="demo-two-select"></select></pre>
+					</div>				
+
+					<div class="panel" id="panel-5">
+						<pre>var myCities = [
+  {value: "-10.0", name: "Honolulu"},
+  {value: "-7.0", name: "San Francisco"}
+];
+
+$('#demo-two-select').timezone(myCities);</pre>
+					</div>
+
+					<div class="panel" id="panel-6">
+						<pre>&lt;select id=&quot;demo-two-select&quot;&gt;&lt;/select&gt;</pre>
+					</div>					
+				</div>
+			</div>
+			
+			<div class="sep"><span class="left-arrow arrow"></span><span class="right-arrow arrow"></span></div>
+			
+			<div class="options">
+				<div class="description">
+					<h2>Default cities</h2>
+					<p>timezone comes with default cities available to work out of the box:</p>
+				</div>
+				
+				<div class="table-wrap">
+					<table width="100%" class="options-table" cellpadding="0" cellspacing="0">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							  <tr><td>Honolulu - HST UTC-10</td><td class="centered">-10.0</td></tr>
+							  <tr><td>San Francisco - PDT UTC-7</td><td class="centered">-7.0</td></tr>
+							  <tr><td>Denver - MDT UTC-6</td><td class="centered">-6.0</td></tr>
+							  <tr><td>Chicago - CDT UTC-5</td><td class="centered">-5.0</td></tr>
+							  <tr><td>New York - EDT UTC-4</td><td class="centered">-4.0</td></tr>
+							  <tr><td>Rio de Janeiro - BRT UTC-3</td><td class="centered">-3.0</td></tr>
+							  <tr><td>London - BST UTC+1</td><td class="centered">1.0</td></tr>
+							  <tr><td>Vienna - CEST UTC+2</td><td class="centered">2.0</td></tr>
+							  <tr><td>Mumbai - IST UTC+5.5</td><td class="centered">5.5</td></tr>
+							  <tr><td>Singapore - SGT UTC+8</td><td class="centered">8.0</td></tr>
+							  <tr><td>Tokyo - JST UTC+9</td><td class="centered">9.0</td></tr>
+							  <tr><td>Sydney - EST UTC+10</td><td class="centered">10.0</td></tr>
+							  <tr><td>Auckland - NZST UTC+12</td><td class="centered">12.0</td></tr>
+							  <tr><td>Honolulu - HST UTC-10</td><td class="centered">-10.0</td></tr>
+							  <tr><td>San Francisco - PDT UTC-7</td><td class="centered">-7.0</td></tr> 
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<footer class="footer">
+			<p><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">jQuery.timezone</span> is built and maintained by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jgallen23/" property="cc:attributionName" rel="cc:attributionURL">Greg Allen</a> & <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/Belelros" property="cc:attributionName" rel="cc:attributionURL">Antonio Laguna</a> and is licensed under a <a rel="license" href="http://opensource.org/licenses/MIT">MIT</a> license.</p>
+		</footer>	
+	</div>
+	<script type="text/javascript" src="https://raw.github.com/jgallen23/timezone-select/master/dist/timezone-select.min.js"></script>
+	<script>
+		$('#demo').timezone();
+		var myCities = [
+		  {value: "-10.0", name: "Honolulu"},
+		  {value: "-7.0", name: "San Francisco"}
+		];
+
+		$('#demo-two-select').timezone(myCities);
+	</script>
+</body>
+</html>
