@@ -7,7 +7,9 @@
   "copyright": "Greg Allen",
   "main": "dist/timezone-select.js",
   "dependencies": {
-    "jquery" : "1.9.x"
+    "jquery": "1.9.x",
+    "moment": "~2.1.0",
+    "moment-timezone": "~0.0.1"
   },
   "devDependencies": {
     "assert": "*"
