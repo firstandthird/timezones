@@ -3,7 +3,7 @@ suite('timezone-select', function() {
   var select;
   suiteSetup(function(){
     select = $('<select>');
-    select.timezone();
+    //select.timezone();
   });
   suite('general',function(){
     test('jQuery element should have timezone function',function(){
