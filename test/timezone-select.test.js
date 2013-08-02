@@ -10,7 +10,7 @@ suite('timezone-select', function() {
       assert.equal(typeof select.timezone, "function");
     });
     test('Timezone should return array of jQuery object to allow chaining',function(){
-      assert.deepEqual(select.timezone(), select);
+      assert.deepEqual(select.timezone({tz: momentTZData}), select);
     });
     test('jQuery element should have options',function(){
       assert.equal(select.find('option').length > 1, true);

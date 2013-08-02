@@ -1,4 +1,4 @@
-momentTZData = {
+var momentTZData = {
     "zones": {
         "Africa/Abidjan": [
             "-0:16:8 - LMT 1912 -0:16:8",
@@ -5144,5 +5144,3 @@ momentTZData = {
         "Europe/Zagreb": "Europe/Belgrade"
     }
 };
-
-moment.tz.add(momentTZData);
