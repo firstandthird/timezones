@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>timezones Example</title>
+</head>
+<body>
+  <div id="example"><select></select></div>
+  <script src="../components/jquery/jquery.min.js" data-cover></script>
+  <script src="../dist/timezones.full.js" data-cover></script>
+  <script src="../test/timezone-data.js"></script>
+  <script>
+  $('#example select').timezones({tz: momentTZData});
+  </script>
+</body>
+</html>
