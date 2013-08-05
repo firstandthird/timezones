@@ -1,7 +1,7 @@
 {
   "name": "timezones",
   "description": "A jQuery plugin to turn a select box into a timezone selector",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/jgallen23/timezones",
   "license": "MIT",
   "copyright": "Greg Allen",
