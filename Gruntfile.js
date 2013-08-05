@@ -34,17 +34,17 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'components/moment-timezone/moment-timezone.js',
-          'lib/timezone-select.js'
+          'lib/timezones.js'
         ],
-        dest: 'dist/timezone-select.js'
+        dest: 'dist/timezones.js'
       },
       full: {
         src: [
           'dist/_bower.js',
           'components/moment-timezone/moment-timezone.js',
-          'lib/timezone-select.js'
+          'lib/timezones.js'
         ],
-        dest: 'dist/timezone-select.full.js'
+        dest: 'dist/timezones.full.js'
       }
     },
     uglify: {
@@ -52,12 +52,12 @@ module.exports = function(grunt) {
         banner: '<%= meta.banner %>'
       },
       dist: {
-        src: 'dist/timezone-select.js',
-        dest: 'dist/timezone-select.min.js'
+        src: 'dist/timezones.js',
+        dest: 'dist/timezones.min.js'
       },
       full: {
-        src: 'dist/timezone-select.full.js',
-        dest: 'dist/timezone-select.full.min.js'
+        src: 'dist/timezones.full.js',
+        dest: 'dist/timezones.full.min.js'
       }
     },
     clean: {

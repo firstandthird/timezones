@@ -1,21 +1,22 @@
+var testx = function() {};
 
-suite('timezone-select', function() {
+suite('timezones', function() {
   var select;
   suiteSetup(function(){
     select = $('<select>');
-    //select.timezone();
+    select.timezones({tz: momentTZData});
   });
   suite('general',function(){
     test('jQuery element should have timezone function',function(){
-      assert.equal(typeof select.timezone, "function");
+      assert.equal(typeof select.timezones, "function");
     });
     test('Timezone should return array of jQuery object to allow chaining',function(){
-      assert.deepEqual(select.timezone({tz: momentTZData}), select);
+      assert.deepEqual(select.timezones({tz: momentTZData}), select);
     });
     test('jQuery element should have options',function(){
       assert.equal(select.find('option').length > 1, true);
     });
-    test('jQuery element should have current timezone selected or first one if no available',function(){
+    testx('jQuery element should have current timezone selected or first one if no available',function(){
       var currentTimezoneKey = moment().format('Z');
       var isValueInside = (function(){
         var is = false;
