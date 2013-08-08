@@ -1,4 +1,11 @@
 
+0.0.2 / 2013-08-07 
+==================
+
+  * Merge remote-tracking branch 'origin/feature/getCurrentOffset'
+  * Timezones ordered.
+  * Added ability to call methods from plugin. Added getCurrentOffset.
+
 0.0.1 / 2013-08-05 
 ==================
 

@@ -1,6 +1,6 @@
 /*!
  * timezones - A jQuery plugin to turn a select box into a timezone selector
- * v0.0.1
+ * v0.0.2
  * https://github.com/jgallen23/timezones
  * copyright Greg Allen 2013
  * MIT License
@@ -2173,18 +2173,31 @@
 
   var Timezone = {
     init : function(cities){
-      this.cities = cities;
+      this.cities = [];
+      
+      for(var key in cities) {
+        this.cities.push({
+          name: key,
+          offset: moment.tz(key).format('Z')
+        });
+      }
+
+      this.cities.sort(function(a, b){
+        return parseInt(a.offset.replace(":", ""), 10) - parseInt(b.offset.replace(":", ""), 10);
+      });
+
       this.html = this.getHTMLOptions();
       this.currentTimezone = this.getCurrentTimezoneKey();
     },
     getHTMLOptions : function(){
       var html = '';
       var offset = 0;
+      var i, c = this.cities.length, city;
 
-      $.each(this.cities,function(name, obj){
-        offset = moment.tz(name).format('Z');
-        html += '<option data-offset="' + offset + '" value="'+ name +'">(GMT ' + offset + ') ' + name +'</option>';
-      });
+      for(i = 0; i < c; i++) {
+        city = this.cities[i];
+        html += '<option data-offset="' + city.offset + '" value="'+ city.name +'">(GMT ' + city.offset + ') ' + city.name +'</option>';
+      }
 
       return html;
     },
@@ -2204,10 +2217,18 @@
     },
     getCurrentTimezoneKey : function(){
       return moment().format('Z');
+    },
+    getCurrentOffset : function(){
+      return parseInt(this.currentTimezone, 10);
     }
   };
 
   $.fn.timezones = function(opts) {
+
+    if(typeof opts === "string") {
+      return Timezone[opts].apply(Timezone, Array.prototype.slice.call(arguments));
+    }
+
     opts = $.extend({}, $.fn.timezones.defaults, opts);
     moment.tz.add(opts.tz);
 
