@@ -38,4 +38,11 @@ suite('timezones', function() {
       }
     });
   });
+
+  suite('callable methods', function(){
+    test('getCurrentOffset', function() {
+      $('<select>').timezones({tz: momentTZData});
+      assert.equal($().timezones('getCurrentOffset'), +new Date().getTimezoneOffset() / -60);
+    });
+  });
 });
