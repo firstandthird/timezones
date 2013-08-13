@@ -45,4 +45,22 @@ suite('timezones', function() {
       assert.equal($().timezones('getCurrentOffset'), +new Date().getTimezoneOffset() / -60);
     });
   });
+
+  suite('formatName', function() {
+    suiteSetup(function(){
+      select = $('<select>');
+    });
+
+    test('default formatName shouldn\'t change timezone name', function() {
+      select.timezones({tz: momentTZBasicData});
+      assert.equal('(GMT -07:00) America/Los_Angeles', select.find('option').first().text());
+    });
+
+    test('timezone name should be result of formatName', function() {
+      select.timezones({tz: momentTZBasicData, formatName: function(str){
+        return str.replace('_', ' ');
+      }});
+      assert.equal('(GMT -07:00) America/Los Angeles', select.find('option').first().text());
+    });
+  });
 });
