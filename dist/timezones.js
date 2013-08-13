@@ -1,6 +1,6 @@
 /*!
  * timezones - A jQuery plugin to turn a select box into a timezone selector
- * v0.0.2
+ * v0.0.3
  * https://github.com/jgallen23/timezones
  * copyright Greg Allen 2013
  * MIT License
@@ -509,8 +509,9 @@
 (function($){
 
   var Timezone = {
-    init : function(cities){
+    init : function(cities, formatName){
       this.cities = [];
+      this.formatName = formatName;
       
       for(var key in cities) {
         this.cities.push({
@@ -533,7 +534,7 @@
 
       for(i = 0; i < c; i++) {
         city = this.cities[i];
-        html += '<option data-offset="' + city.offset + '" value="'+ city.name +'">(GMT ' + city.offset + ') ' + city.name +'</option>';
+        html += '<option data-offset="' + city.offset + '" value="'+ city.name +'">(GMT ' + city.offset + ') ' + this.formatName(city.name) +'</option>';
       }
 
       return html;
@@ -569,7 +570,13 @@
     opts = $.extend({}, $.fn.timezones.defaults, opts);
     moment.tz.add(opts.tz);
 
-    Timezone.init(opts.tz.zones);
+    if(!opts.formatName || typeof opts.formatName !== 'function') {
+      opts.formatName = function(str) {
+        return str;
+      };
+    }
+
+    Timezone.init(opts.tz.zones, opts.formatName);
 
     return this.each(function(){
       Timezone.addNames(this);
