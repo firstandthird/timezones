@@ -8,8 +8,8 @@
   "main": "dist/timezones.js",
   "dependencies": {
     "jquery": "1.*",
-    "moment": "~2.1.0",
-    "moment-timezone": "~0.0.1"
+    "moment": "~2.8.3",
+    "moment-timezone": "~0.2.4"
   },
   "devDependencies": {
     "assert": "*"
