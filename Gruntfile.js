@@ -23,8 +23,7 @@ module.exports = function(grunt) {
         dest: 'dist/_bower.js',
         exclude: [
           'jquery',
-          'assert',
-          'moment-timezone'
+          'assert'
         ]
       }
     },
@@ -34,7 +33,6 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          'bower_components/moment-timezone/moment-timezone.js',
           'lib/timezones.js'
         ],
         dest: 'dist/timezones.js'
@@ -42,7 +40,6 @@ module.exports = function(grunt) {
       full: {
         src: [
           'dist/_bower.js',
-          'bower_components/moment-timezone/moment-timezone.js',
           'lib/timezones.js'
         ],
         dest: 'dist/timezones.full.js'
