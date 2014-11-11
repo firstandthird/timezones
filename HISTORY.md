@@ -1,4 +1,11 @@
 
+0.1.0 / 2014-11-11 
+==================
+
+  * load moment-timezone from bower, optionally take in array of tz
+  * Added ignored files/directories to bower.json
+  * Updated to use new moment-timezone
+
 0.0.4 / 2013-08-19 
 ==================
 
